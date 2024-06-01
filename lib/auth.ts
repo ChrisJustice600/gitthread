@@ -4,9 +4,9 @@ import Github from "next-auth/providers/github";
 import prisma from "./prisma";
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
-  theme: {
-    logo: "/logo.png",
-  },
+  // theme: {
+  //   logo: "/logo.png",
+  // },
   adapter: PrismaAdapter(prisma),
   providers: [Github],
 });
