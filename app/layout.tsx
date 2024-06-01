@@ -1,3 +1,5 @@
+import { Footer } from "@/src/features/layout/Footer";
+import { Header } from "@/src/features/layout/Header";
 import { ThemeProvider } from "@/src/theme/ThemeProvider";
 import clsx from "clsx";
 import type { Metadata } from "next";
@@ -26,9 +28,11 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <div className="flex flex-col h-full">
+            <Header />
             <div className="flex-1 max-w-lg m-auto py-12 w-full">
               {children}
             </div>
+            <Footer />
           </div>
         </ThemeProvider>
       </body>
