@@ -46,6 +46,25 @@ const main = async () => {
     const p = await prisma.post.create({ data: post });
     posts.push(p);
   }
+
+  for (let i = 0; i < 100; i++) {
+    const randomUserIndex = faker.number.int({
+      min: 0,
+      max: users.length - 1,
+    });
+
+    const randomPostIndex = faker.number.int({
+      min: 0,
+      max: posts.length - 1,
+    });
+
+    const like = {
+      postId: posts[randomPostIndex].id,
+      userId: users[randomUserIndex].id,
+    } satisfies Prisma.LikeUncheckedCreateInput;
+
+    await prisma.like.create({ data: like });
+  }
 };
 
 main()
