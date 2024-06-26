@@ -39,4 +39,4 @@ export const getLatestPosts = (userId?: string) =>
     },
   });
 
-export type PostHome = Prisma.PromiseReturnType<typeof getLatestPosts>;
+export type PostHome = Prisma.PromiseReturnType<typeof getLatestPosts>[number];

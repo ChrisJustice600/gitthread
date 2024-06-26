@@ -11,7 +11,6 @@ type PostLayoutProps = PropsWithChildren<{
   createdAt?: Date;
   className?: string;
   postId?: string;
-  children: string;
 }>;
 
 export const PostLayout = ({
