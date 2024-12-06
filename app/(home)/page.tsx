@@ -1,11 +1,11 @@
 import getSession from "@/lib/getSession";
 import { Post } from "@/src/features/post/Post";
-import { getLatestPosts } from "@/src/query/post.query";
+import { get20LastPosts } from "@/src/query/post.query";
 
 export default async function page() {
   const session = await getSession();
 
-  const posts = await getLatestPosts();
+  const posts = await get20LastPosts();
 
   return (
     <div className="divide-y divide-muted">

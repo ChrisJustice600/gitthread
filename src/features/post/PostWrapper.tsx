@@ -37,7 +37,7 @@ export const PostWrapper = ({
 
   return (
     <div className={clsx("flex w-full flex-row items-start p-4", className)}>
-      <Avatar size="default">
+      <Avatar>
         {user.image ? <AvatarImage src={user.image} alt="user" /> : null}
         <AvatarFallback>
           {user.username.slice(0, 1).toUpperCase()}
